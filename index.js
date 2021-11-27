@@ -4,11 +4,11 @@ import shuffle from "./src/shuffle-records.js";
 import exportCSV from "./src/export-csv.js";
 
 const App = () => {
-    const length = input('how many rows do you want to pick from this file ? : ');
+    const testPercentage = input('enter test percentage : ');
     const fileName = input('enter file name : ');
     const records = parseCSV();
-    const shuffledRecords = shuffle(records, length);
-    exportCSV(shuffledRecords, fileName);
+    const { trainRecords, testRecords } = shuffle(records, testPercentage);
+    exportCSV(trainRecords, testRecords, fileName);
 }
 
 App();
