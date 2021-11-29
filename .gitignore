@@ -75,3 +75,5 @@ typings/
 # FuseBox cache
 .fusebox/
 data.csv
+src/add-output.js
+*.csv
